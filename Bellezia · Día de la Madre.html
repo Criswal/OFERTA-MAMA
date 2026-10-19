@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bellezia · Día de la Madre</title>
+<meta name="description" content="Regalale a mamá un momento para ella. Gift cards de masajes, facial e Indiba en Bellezia, CABA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff4f6; --surface:#ffffff; --ink:#3a1830; --muted:#7a5a6e; --plum:#5b2447; --rose:#e0899e; --rose-soft:#f8d9e0; --gold:#b98a2e; --wa:#25d366; --line:#efd3db;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#1f0f1a;--surface:#2c1624;--ink:#fbeaf0;--muted:#c9a3b5;--plum:#f0a9bd;--rose:#e0899e;--rose-soft:#3d1c31;--gold:#e0b65a;--line:#4a2a3d}
+}
+:root[data-theme="dark"]{--bg:#1f0f1a;--surface:#2c1624;--ink:#fbeaf0;--muted:#c9a3b5;--plum:#f0a9bd;--rose:#e0899e;--rose-soft:#3d1c31;--gold:#e0b65a;--line:#4a2a3d}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Jost,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.55}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;line-height:1.08;margin:0;font-weight:600}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;font-weight:700;color:var(--plum);text-decoration:none;letter-spacing:.5px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--wa);color:#07391c;font-weight:600;text-decoration:none;padding:13px 22px;border-radius:999px;border:0;font-size:16px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn svg{width:22px;height:22px;flex:none}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:30px 0 70px}
+.hero h1{font-size:clamp(46px,8vw,86px);color:var(--plum)}
+.hero p{font-size:19px;color:var(--muted);max-width:46ch;margin:20px 0 28px}
+.date{display:inline-block;background:var(--rose-soft);color:var(--plum);padding:7px 16px;border-radius:999px;font-weight:500;font-size:15px;margin-bottom:18px}
+.bloom{aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--rose-soft),var(--rose) 70%);position:relative;display:grid;place-items:center;max-width:380px;margin:0 auto;width:100%}
+.bloom::after{content:"";position:absolute;inset:-14px;border:1.5px solid var(--gold);border-radius:50%;opacity:.7}
+.bloom span{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(34px,6vw,52px);font-weight:700;color:#fff;text-align:center;line-height:1.05;text-shadow:0 2px 14px rgba(91,36,71,.35)}
+section{padding:56px 0}
+section h2{font-size:clamp(34px,5vw,50px);color:var(--plum);margin-bottom:10px}
+.lead{color:var(--muted);max-width:54ch;margin:0 0 30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.card h3{font-size:27px;color:var(--ink)}
+.card p{margin:0;color:var(--muted);font-size:15.5px;flex:1}
+.price{font-family:"Cormorant Garamond",Georgia,serif;font-size:34px;font-weight:700;color:var(--gold)}
+.card a.buy{margin-top:6px;text-align:center;text-decoration:none;font-weight:600;color:var(--plum);border:1.5px solid var(--plum);border-radius:999px;padding:10px 16px}
+.card a.buy:hover{background:var(--plum);color:var(--bg)}
+.card.feat{background:var(--plum);color:#fff;border-color:var(--plum)}
+.card.feat h3,.card.feat p{color:#fff}
+.card.feat .price{color:#f6d68a}
+.card.feat a.buy{background:var(--wa);border-color:var(--wa);color:#07391c}
+.tag{align-self:flex-start;background:var(--gold);color:#fff;font-size:13px;font-weight:600;padding:3px 12px;border-radius:999px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;counter-reset:s;padding:0;list-style:none;margin:0}
+.steps li{counter-increment:s;padding-left:58px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-4px;width:42px;height:42px;border-radius:50%;background:var(--rose-soft);color:var(--plum);display:grid;place-items:center;font-family:"Cormorant Garamond",Georgia,serif;font-size:26px;font-weight:700}
+.steps b{display:block;font-size:18px}
+.steps span{color:var(--muted);font-size:15.5px}
+.cta{background:var(--plum);color:#fff;border-radius:28px;padding:44px 28px;text-align:center;margin:20px 0 60px}
+:root[data-theme="dark"] .cta,.cta{color:#fff}
+.cta h2{color:#fff;font-size:clamp(32px,5vw,48px)}
+.cta p{margin:12px auto 24px;max-width:46ch;opacity:.9}
+footer{border-top:1px solid var(--line);padding:30px 0 110px;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 36px;justify-content:space-between}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:62px;height:62px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.3);z-index:20}
+.fab svg{width:34px;height:34px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:10px}.bloom{max-width:260px;order:-1}header .btn span{display:none}header .btn{padding:12px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:root{--logo:url(data:image/png;base64,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)}
+.logo-img{background:var(--logo) center/contain no-repeat;display:block}
+.top{position:relative;overflow:hidden;color:#fff;background:linear-gradient(160deg,#3a1030 0%,#64234f 55%,#8c3668 100%)}
+.topbg{position:absolute;inset:0}
+.topbg svg{width:100%;height:100%;display:block}
+.topbg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(52,14,41,.9) 0%,rgba(52,14,41,.62) 48%,rgba(52,14,41,.15) 100%)}
+.top .wrap{position:relative;z-index:1}
+.top .logo{width:76px;height:76px}
+.top .hero h1{color:#fff;text-shadow:0 2px 24px rgba(40,8,30,.5)}
+.top .hero p{color:#f7dfe8}
+.top .date{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.top .bloom{background:radial-gradient(circle,rgba(255,255,255,.16),rgba(255,255,255,0) 68%);max-width:400px}
+.top .bloom::after{display:none}
+.top .bloom .logo-img{width:88%;aspect-ratio:1;filter:drop-shadow(0 8px 30px rgba(40,8,30,.5))}
+.cta{position:relative;overflow:hidden;background:linear-gradient(150deg,#4a1a3a,#8c3668)}
+.cta>*{position:relative;z-index:1}
+.cta>.bgs{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.55}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16.04 3C9.4 3 4 8.4 4 15.03c0 2.12.55 4.18 1.6 6L4 29l8.17-1.58a12.03 12.03 0 0 0 3.87.63h.01C22.7 28.05 28 22.65 28 16.02A12.01 12.01 0 0 0 16.04 3Zm0 21.97h-.01c-1.2 0-2.38-.32-3.4-.93l-.25-.14-4.85.94.97-4.72-.16-.26a9.9 9.9 0 0 1-1.52-5.3c0-5.5 4.5-9.97 10.03-9.97 2.68 0 5.2 1.04 7.09 2.93a9.9 9.9 0 0 1 2.93 7.05c0 5.5-4.5 10.4-10.83 10.4Zm5.5-7.47c-.3-.15-1.78-.88-2.05-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.22-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.64-.93-2.25-.25-.58-.5-.5-.68-.51h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.23 5.13 4.53.72.3 1.28.5 1.72.64.72.23 1.37.2 1.89.12.58-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35Z"/></symbol><symbol id="gb" viewBox="0 0 100 100"><rect x="10" y="42" width="80" height="50" rx="4" fill="currentColor"/><rect x="5" y="30" width="90" height="16" rx="4" fill="currentColor"/><rect x="5" y="30" width="90" height="16" rx="4" fill="#fff" opacity=".18"/><rect x="43" y="30" width="14" height="62" fill="#fff" opacity=".55"/><ellipse cx="36" cy="22" rx="15" ry="8" transform="rotate(-25 36 22)" fill="#fff" opacity=".6"/><ellipse cx="64" cy="22" rx="15" ry="8" transform="rotate(25 64 22)" fill="#fff" opacity=".6"/><circle cx="50" cy="26" r="6" fill="#fff" opacity=".75"/></symbol></svg>
+
+<div class="top">
+<div class="topbg" aria-hidden="true"><svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice"><use href="#gb" x="30" y="360" width="260" height="260" transform="rotate(-10 160 490)" style="color:#e0899e;filter:blur(6px)"/><use href="#gb" x="880" y="40" width="300" height="300" transform="rotate(12 1030 190)" style="color:#d4a64a;filter:blur(8px)"/><use href="#gb" x="1000" y="400" width="230" height="230" transform="rotate(-8 1115 515)" style="color:#f8d9e0;filter:blur(4px)"/><use href="#gb" x="290" y="500" width="190" height="190" transform="rotate(6 385 595)" style="color:#c25a82;filter:blur(3px)"/><use href="#gb" x="600" y="-30" width="170" height="170" transform="rotate(20 685 55)" style="color:#e0899e;filter:blur(10px)"/><use href="#gb" x="-50" y="20" width="210" height="210" transform="rotate(-15 55 125)" style="color:#f3c5d1;filter:blur(9px)"/><use href="#gb" x="680" y="470" width="250" height="250" transform="rotate(-5 805 595)" style="color:#d4a64a;filter:blur(6px)"/><use href="#gb" x="480" y="250" width="130" height="130" transform="rotate(15 545 315)" style="color:#f8d9e0;filter:blur(12px)"/></svg></div>
+<div class="wrap">
+  <header>
+    <a class="logo logo-img" href="#top" role="img" aria-label="Bellezia"></a>
+    <a class="btn" href="https://wa.me/5491138573290?text=Hola!%20Quiero%20consultar%20por%20la%20promo%20del%20D%C3%ADa%20de%20la%20Madre" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg><use href="#wa"/></svg><span>Escribinos</span></a>
+  </header>
+    <div class="hero" id="top">
+      <div>
+        <div class="date">Domingo 18 de octubre</div>
+        <h1>Regalale a mamá un día para ella</h1>
+        <p>Masajes, tratamientos faciales e Indiba en Bellezia. Elegí una gift card y la coordinamos por WhatsApp en minutos.</p>
+        <a class="btn" href="https://wa.me/5491138573290?text=Hola!%20Quiero%20una%20gift%20card%20para%20el%20D%C3%ADa%20de%20la%20Madre" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Quiero mi gift card</a>
+      </div>
+      <div class="bloom"><div class="logo-img" role="img" aria-label="Bellezia"></div></div>
+    </div>
+</div></div>
+<div class="wrap"><main>
+    <section id="gift">
+      <h2>Gift cards para regalar</h2>
+      <p class="lead">Se entregan listas para imprimir o enviar. Mamá elige el día que quiera.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Masajes Relax</h3>
+          <p>Un masaje relajante para soltar la tensión de toda la semana.</p>
+          <div class="price">$50.000</div>
+          <a class="buy" href="https://wa.me/5491138573290?text=Hola!%20Quiero%20la%20Gift%20Card%20Masajes%20Relax" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </article>
+        <article class="card feat">
+          <span class="tag">La más elegida</span>
+          <h3>Relax Total</h3>
+          <p>Una experiencia completa de relajación pensada para desconectar.</p>
+          <div class="price">$60.000</div>
+          <a class="buy" href="https://wa.me/5491138573290?text=Hola!%20Quiero%20la%20Gift%20Card%20Relax%20Total" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </article>
+        <article class="card">
+          <h3>Facial Premium</h3>
+          <p>Tratamiento facial para una piel luminosa y descansada.</p>
+          <div class="price">$60.000</div>
+          <a class="buy" href="https://wa.me/5491138573290?text=Hola!%20Quiero%20la%20Gift%20Card%20Facial%20Premium" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </article>
+        <article class="card">
+          <h3>Rejuvenecimiento Indiba</h3>
+          <p>Tecnología Indiba para tonificar y rejuvenecer el rostro.</p>
+          <div class="price">$90.000</div>
+          <a class="buy" href="https://wa.me/5491138573290?text=Hola!%20Quiero%20la%20Gift%20Card%20Rejuvenecimiento%20Indiba" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>También en sesión individual</h2>
+      <p class="lead">Si preferís reservarle un turno puntual.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Limpieza facial</h3>
+          <p>Limpieza profunda para renovar e hidratar la piel.</p>
+          <div class="price">$60.000</div>
+          <a class="buy" href="https://wa.me/5491138573290?text=Hola!%20Quiero%20reservar%20una%20Limpieza%20facial" target="_blank" rel="noopener">Reservar</a>
+        </article>
+        <article class="card">
+          <h3>Masajes relajantes</h3>
+          <p>Sesión de masaje para aliviar contracturas y estrés.</p>
+          <div class="price">$35.000</div>
+          <a class="buy" href="https://wa.me/5491138573290?text=Hola!%20Quiero%20reservar%20Masajes%20relajantes" target="_blank" rel="noopener">Reservar</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Cómo regalarlo</h2>
+      <ol class="steps">
+        <li><b>Elegí el regalo</b><span>Gift card o sesión individual, la que más le guste a mamá.</span></li>
+        <li><b>Escribinos</b><span>Tocá el botón de WhatsApp y te respondemos enseguida.</span></li>
+        <li><b>Coordiná y regalá</b><span>Te enviamos la gift card y mamá agenda su turno cuando quiera.</span></li>
+      </ol>
+    </section>
+
+    <div class="cta">
+      <svg class="bgs" aria-hidden="true" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid slice"><use href="#gb" x="20" y="150" width="200" height="200" transform="rotate(-12 120 250)" style="color:#e0899e;filter:blur(5px)"/><use href="#gb" x="780" y="10" width="220" height="220" transform="rotate(10 890 120)" style="color:#d4a64a;filter:blur(6px)"/><use href="#gb" x="420" y="230" width="150" height="150" transform="rotate(8 495 305)" style="color:#f8d9e0;filter:blur(8px)"/><use href="#gb" x="600" y="-40" width="140" height="140" transform="rotate(-18 670 30)" style="color:#c25a82;filter:blur(9px)"/><use href="#gb" x="860" y="240" width="170" height="170" transform="rotate(-6 945 325)" style="color:#f3c5d1;filter:blur(4px)"/></svg>
+      <h2>Faltan pocos días</h2>
+      <p>Pedí tu gift card hoy y llegá al domingo con el regalo resuelto.</p>
+      <a class="btn" href="https://wa.me/5491138573290?text=Hola!%20Quiero%20una%20gift%20card%20para%20el%20D%C3%ADa%20de%20la%20Madre" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Hablar por WhatsApp</a>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div><b>Bellezia</b><br>Muñiz 132, CABA</div>
+    <div>WhatsApp: <a href="https://wa.me/5491138573290" target="_blank" rel="noopener">11 3857-3290</a><br><a href="https://www.bellezia.com.ar" target="_blank" rel="noopener">www.bellezia.com.ar</a></div>
+    <div><a href="https://instagram.com/bellezia.men" target="_blank" rel="noopener">@bellezia.men</a></div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5491138573290?text=Hola!%20Quiero%20consultar%20por%20la%20promo%20del%20D%C3%ADa%20de%20la%20Madre" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp" style="color:#fff"><svg><use href="#wa"/></svg></a>
+</body>
+</html>
